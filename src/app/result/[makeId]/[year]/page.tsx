@@ -3,7 +3,6 @@ import { Suspense } from 'react';
 import { getVehicles } from '@/app/api/vehicles';
 import { Loading, VehicleList } from '@/components/shared';
 import { Vehicle } from '@/entities/vehicle';
-import { YEARS } from '@/lib/constants';
 
 export async function generateStaticParams() {
 	const vehicles = await getVehicles();
@@ -12,10 +11,13 @@ export async function generateStaticParams() {
 		return;
 	}
 
-	return vehicles.map((vehicle: Vehicle, index: number) => ({
-		makeId: vehicle.MakeId.toString(),
-		year: YEARS[index],
-	}));
+	return vehicles.map((vehicle: Vehicle) => {
+		console.log({ makeId: vehicle.MakeId });
+
+		return {
+			makeId: vehicle.MakeId.toString(),
+		};
+	});
 }
 
 async function ResultPage({ params }: { params: { makeId: string; year: string } }) {
