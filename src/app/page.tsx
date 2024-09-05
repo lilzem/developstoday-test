@@ -1,7 +1,6 @@
 import { Container, Form } from '@/components/shared';
 import { getVehicles } from './api/vehicles';
-
-export const YEARS = ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024'];
+import { YEARS } from '@/lib/constants';
 
 export default async function Home() {
 	const data = await getVehicles();

@@ -1,9 +1,9 @@
 import { Suspense } from 'react';
 
 import { getVehicles } from '@/app/api/vehicles';
-import { YEARS } from '@/app/page';
 import { Loading, VehicleList } from '@/components/shared';
 import { Vehicle } from '@/entities/vehicle';
+import { YEARS } from '@/lib/constants';
 
 export async function generateStaticParams() {
 	const vehicles = await getVehicles();

@@ -1,16 +1,15 @@
 import { FC, ReactNode } from 'react';
 
-import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Select, SelectContent, SelectGroup, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { cn } from '@/lib/utils';
-import { Vehicle } from '@/entities/vehicle';
 
 interface FilterSelectProps {
 	className?: string;
 	children: ReactNode;
 	placeholder: string;
-	selected?: any;
+	selected?: string;
 	name?: string;
-	onSelect?: (v?: any) => void;
+	onSelect?: (v: string) => void;
 }
 
 export const FilterSelect: FC<FilterSelectProps> = ({ className, placeholder, selected, onSelect, name, children }) => {

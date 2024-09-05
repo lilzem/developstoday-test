@@ -6,6 +6,7 @@ import { Container, Header } from '@/components/shared';
 
 const nunito = Nunito({
 	subsets: ['latin'],
+	display: 'swap',
 	variable: '--font-nunito',
 	weight: ['400', '500', '600', '700', '800', '900'],
 });
