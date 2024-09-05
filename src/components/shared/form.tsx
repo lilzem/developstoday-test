@@ -30,7 +30,7 @@ export const Form: FC<FormProps> = ({ className, data, years }) => {
 	return (
 		<form className={cn('flex gap-4', className)}>
 			<FilterSelect selected={makeId} onSelect={setMakeId} placeholder="Choose vehicle">
-				{data.map((item: Vehicle) => (
+				{data?.map((item: Vehicle) => (
 					<SelectItem key={item.MakeId} value={item.MakeId.toString()}>
 						{item.MakeName}
 					</SelectItem>
